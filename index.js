@@ -1,8 +1,14 @@
 
 
-var escape = module.exports = function escape(string) {
+var escape = module.exports = function escape(string, ignore) {
+  var pattern;
+
   if (string === null || string === undefined) return;
-  return string.replace(/([&"<>'])/g, function(str, item) {
+
+  ignore = (ignore || '').replace(/[^&"<>\']/g, '');
+  pattern = '([&"<>\'])'.replace(new RegExp('[' + ignore + ']', 'g'), '');
+
+  return string.replace(new RegExp(pattern, 'g'), function(str, item) {
             return escape.map[item];
           })
 }
