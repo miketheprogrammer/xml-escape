@@ -21,6 +21,4 @@ xmlescape('"hello" \'world\' & false < true > -1', '>"&')
 // '"hello" &apos;world&apos; & false &lt; true > -1'
 ```
 
-
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miketheprogrammer/xml-escape/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
