@@ -14,6 +14,12 @@ test("Module should respect ignore string", function (t) {
     t.equals(escape('" \' < > &', '"\'<>&'), '" \' < > &');
 })
 
+test("Module should not escape random characters", function (t) {
+    t.plan(1);
+
+    t.equals(escape('<[whats up]>', '<]what'), '<[whats up]&gt;');
+})
+
 test("Module should not crash on null or undefined input", function (t) {
     t.plan(3);
 
