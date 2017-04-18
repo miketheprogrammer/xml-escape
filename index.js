@@ -4,7 +4,7 @@ var escape = module.exports = function escape(string, ignore) {
   var pattern;
 
   if (string === null || string === undefined) return;
-
+  string += ''
   ignore = (ignore || '').replace(/[^&"<>\']/g, '');
   pattern = '([&"<>\'])'.replace(new RegExp('[' + ignore + ']', 'g'), '');
 
